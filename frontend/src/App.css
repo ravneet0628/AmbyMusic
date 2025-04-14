@@ -1,0 +1,382 @@
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: #121212;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.navbar h1 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffd700;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  color: #ffd700;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease, color 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.navbar ul li:hover {
+  background-color: #ffd700;
+  color: #1f1f1f;
+}
+
+
+/* Section Styles */
+section {
+  padding: 100px 20px;
+  margin: 40px auto;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.5);  /* dark semi-transparent */
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  z-index: 1;
+}
+
+/* Home Section */
+.home {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.home h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffd700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #eee;
+  border-radius: 5px;
+  background-color: #12121275;
+  padding: 1%;
+  box-shadow: 0 4px 10px #ffd700;
+}
+
+/* Gallery Section */
+.gallery {
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+}
+.contact h2 {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: #1f1f1f;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%; /* Ensures all inputs take full width */
+  background-color: #2e2e2e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Includes padding inside width */
+}
+
+.contact button {
+  cursor: pointer;
+  background-color: #f39c12;
+  color: #000;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.3s;
+}
+.contact button:hover {
+  background-color: #e67e22;
+}
+
+/* Socials Section */
+.socials {
+  text-align: center;
+}
+
+.socials a {
+  display: inline-block;
+  margin: 10px;
+  color: #f39c12;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.7;
+}
+.navbar,
+section {
+  position: relative;
+  z-index: 1;
+}
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+section a {
+  color: #ffd700;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+.footer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+  margin-top: 60px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer h3 {
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.footer-links {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  margin: 0 12px;
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.welcome-section {
+  background: none;  /* Remove background from Welcome section */
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.welcome-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}  
+.admin-dashboard {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fb;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.admin-dashboard h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.admin-dashboard h3 {
+  color: #34495e;
+  margin-top: 40px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.add-video-form {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+}
+
+table thead {
+  background-color: #ecf0f1;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 6px 12px;
+}
+
+.admin-login {
+  max-width: 400px;
+  margin: 100px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.youtube-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  padding: 0 20px;
+  justify-items: center;
+}
+
+.youtube-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.youtube-card:hover {
+  transform: translateY(-5px);
+}
