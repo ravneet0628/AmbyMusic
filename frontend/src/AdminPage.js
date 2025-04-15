@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-const dotenv = require("dotenv");
 
-const API_URL = process.env.API_URL;
+const API_URL = process.env.API_URL || "http://localhost:5000";
 
 
 function AdminPage() {
