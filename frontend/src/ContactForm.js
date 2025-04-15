@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+const dotenv = require("dotenv");
 
-const API_URL = "http://localhost:5000";
+const API_URL = process.env.API_URL;
+
 
 function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
