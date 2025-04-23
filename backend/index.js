@@ -18,8 +18,7 @@ app.use(cors());
 
 const SECRET_KEY = process.env.JWT_SECRET;
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
-const ADMIN_PASSWORD_HASH = bcrypt.hashSync(ADMIN_PASSWORD, 10);
+const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH;
 const LINKS_TABLE = process.env.LINKS_TABLE;
 const MESSAGES_TABLE = process.env.MESSAGES_TABLE;
 
