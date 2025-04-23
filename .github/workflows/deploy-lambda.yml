@@ -28,7 +28,7 @@ jobs:
 
       - name: Zip backend code
         run: |
-          zip -r backend.zip
+          zip -r backend.zip index.js package.json package-lock.json node_modules
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
