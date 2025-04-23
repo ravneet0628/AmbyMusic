@@ -58,10 +58,10 @@ function App() {
               <footer ref={socialsRef} className="footer">
                 <h3>🌍 Follow Me</h3>
                 <div className="footer-links">
-                  <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.instagram.com/gursimran.2424/" target="_blank" rel="noopener noreferrer">
                     Instagram
                   </a>
-                  <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://youtube.com/@ambymusic?si=O6qCRhJbrlUFxy_-" target="_blank" rel="noopener noreferrer">
                     YouTube
                   </a>
                 </div>
