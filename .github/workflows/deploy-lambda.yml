@@ -26,9 +26,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: List directory contents
+        run: ls -R
+
       - name: Zip backend code
+        working-directory: ./backend
         run: |
-          cd backend
           zip -r ../backend.zip
 
       - name: Configure AWS Credentials
