@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const AWS = require("aws-sdk");
 const { v4: uuidv4 } = require("uuid");
+const serverless = require("serverless-http");
 
 // Load .env in local but skip on AWS Lambda
 if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
@@ -12,12 +13,13 @@ if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
 }
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 const SECRET_KEY = process.env.JWT_SECRET;
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
-const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const ADMIN_PASSWORD_HASH = bcrypt.hashSync(ADMIN_PASSWORD, 10);
 const LINKS_TABLE = process.env.LINKS_TABLE;
 const MESSAGES_TABLE = process.env.MESSAGES_TABLE;
 
@@ -30,12 +32,13 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient({
 // Admin login
 app.post("/admin/login", (req, res) => {
   const { username, password } = req.body;
-  if (username !== ADMIN_USERNAME || !bcrypt.compareSync(password, ADMIN_PASSWORD_HASH)) {
-    return res.status(401).json({ error: "Invalid credentials" });
+  if (username === ADMIN_USERNAME && bcrypt.compareSync(password, ADMIN_PASSWORD_HASH)) {
+    const token = jwt.sign({ username }, SECRET_KEY, { expiresIn: "1h" });
+    return res.json({ access_token: token });
   }
-  const token = jwt.sign({ username }, SECRET_KEY, { expiresIn: "1h" });
-  res.json({ access_token: token });
+  return res.status(401).json({ message: "Invalid credentials" });
 });
+
 
 // JWT middleware
 const authenticate = (req, res, next) => {
@@ -114,11 +117,10 @@ app.delete("/api/contact-responses/:id", authenticate, async (req, res) => {
   }
 });
 
-// For AWS Lambda compatibility
-if (process.env.AWS_LAMBDA_FUNCTION_NAME) {
-  const serverless = require("serverless-http");
-  module.exports.handler = serverless(app);
-} else {
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Local Development Mode
+if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
+  app.listen(5000, () => console.log("🚀 Server running locally on http://localhost:5000"));
 }
+
+// Export for AWS Lambda
+module.exports.handler = serverless(app);

@@ -16,7 +16,6 @@ body {
   background-color: #1f1f1f;
   padding: 15px 30px;
   position: fixed;
-  width: 100%;
   top: 0;
   z-index: 999;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
@@ -57,7 +56,7 @@ section {
   padding: 100px 20px;
   margin: 40px auto;
   max-width: 900px;
-  background: rgba(0, 0, 0, 0.5);  /* dark semi-transparent */
+  background: rgba(0, 0, 0, 0.5);  
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -128,20 +127,19 @@ section {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   gap: 15px;
-  width: 100%;
   max-width: 400px;
 }
 
 .contact input,
 .contact textarea {
-  width: 100%; /* Ensures all inputs take full width */
+  width: 100%; 
   background-color: #2e2e2e;
   color: #fff;
   border: none;
   border-radius: 6px;
   padding: 12px;
   font-size: 1rem;
-  box-sizing: border-box; /* Includes padding inside width */
+  box-sizing: border-box; 
 }
 
 .contact button {
@@ -246,7 +244,7 @@ section a:hover {
   color: #ccc;
 }
 .welcome-section {
-  background: none;  /* Remove background from Welcome section */
+  background: none;  
   color: #fff;
   padding: 100px 20px;
   text-align: center;
@@ -286,8 +284,8 @@ input[type="text"],
 input[type="password"],
 textarea {
   padding: 10px;
-  margin: 10px 0;
-  width: 100%;
+  margin: 10px 0px;
+  width: 95%;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
@@ -379,4 +377,160 @@ table tr:hover {
 
 .youtube-card:hover {
   transform: translateY(-5px);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 1024px) {
+  .navbar ul {
+    gap: 12px;
+  }
+
+  .home h2 {
+    font-size: 2.5rem;
+  }
+
+  .home p {
+    font-size: 1.2rem;
+  }
+
+  .youtube-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
+
+  section {
+    margin: 20px 10px;
+    padding: 80px 15px;
+  }
+
+  .home h2 {
+    font-size: 2rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+
+  .youtube-list {
+    grid-template-columns: 1fr;
+  }
+
+  .video-container iframe {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .footer h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar h1 {
+    font-size: 18px;
+  }
+
+  .navbar ul li {
+    font-size: 16px;
+  }
+
+  .home h2 {
+    font-size: 1.8rem;
+  }
+
+  .home p {
+    font-size: 0.95rem;
+  }
+
+  .video-container iframe {
+    width: 50% !important;
+    height: auto !important;
+  }
+
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact form {
+    padding: 15px;
+  }
+
+  .youtube-card {
+    padding: 16px;
+  }
+
+  .footer-links a {
+    margin: 0 6px;
+  }
+}
+
+/* Hamburger menu toggle visibility */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: #ffd700;
+  cursor: pointer;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    color: #ffd700;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 180px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+    margin: 0;
+    
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar ul li {
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    color: #ffd700;
+  }
 }
