@@ -28,6 +28,7 @@ jobs:
 
       - name: Zip backend code
         run: |
+          cd backend
           zip -r ../backend.zip
 
       - name: Configure AWS Credentials
