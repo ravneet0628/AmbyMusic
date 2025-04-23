@@ -41,5 +41,5 @@ jobs:
         run: |
           aws lambda update-function-code \
             --function-name amby_backend \
-            --zip-file fileb://../backend.zip \
+            --zip-file fileb://backend.zip \
             --region ${{ secrets.AWS_REGION }}
