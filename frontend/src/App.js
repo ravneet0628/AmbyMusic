@@ -59,10 +59,10 @@ function App() {
                 <h3>🌍 Follow Me</h3>
                 <div className="footer-links">
                   <a href="https://www.instagram.com/gursimran.2424/" target="_blank" rel="noopener noreferrer">
-                    Instagram
+                    <i className="fab fa-instagram"></i> Instagram
                   </a>
                   <a href="https://youtube.com/@ambymusic?si=O6qCRhJbrlUFxy_-" target="_blank" rel="noopener noreferrer">
-                    YouTube
+                    <i className="fab fa-youtube"></i> YouTube
                   </a>
                 </div>
                 <p>© {new Date().getFullYear()} Amby Music. All rights reserved.</p>

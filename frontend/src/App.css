@@ -280,15 +280,24 @@ section a:hover {
   margin-top: 40px;
 }
 
-input[type="text"],
-input[type="password"],
-textarea {
-  padding: 10px;
-  margin: 10px 0px;
-  width: 95%;
+.admin-login {
+  max-width: 400px;
+  margin: 100px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login input {
+  width: 100%; 
+  color: #0e0d0d;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  border: 1px solid #ccc;
+  margin-bottom: 1cap;
+  padding: 12px;
   font-size: 1rem;
+  box-sizing: border-box;
 }
 
 button {
@@ -315,6 +324,15 @@ button:hover:not(:disabled) {
   margin-top: 20px;
   border-top: 1px solid #ccc;
   padding-top: 20px;
+}
+
+.add-video-form input {
+  color: #000000;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  margin-right: 0.5cap;
+  padding: 12px 10px;
+  font-size: 1rem;
 }
 
 table {
@@ -350,14 +368,7 @@ table tr:hover {
   padding: 6px 12px;
 }
 
-.admin-login {
-  max-width: 400px;
-  margin: 100px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+
 .youtube-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
