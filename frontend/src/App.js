@@ -8,6 +8,7 @@ import "./App.css";
 function App() {
   const homeRef = useRef(null);
   const galleryRef = useRef(null);
+  const shopRef = useRef(null);
   const contactRef = useRef(null);
   const socialsRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -30,13 +31,14 @@ function App() {
               </video>
 
               <nav className="navbar">
-                <h1>🎵 Amby Music</h1>
+                <h1><i className="fas fa-headphones"></i> Amby Music</h1>
                 <div className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
                   ☰
                 </div>
                 <ul className={isOpen ? "active" : ""}>
                   <li onClick={() => scrollToSection(homeRef)}>Home</li>
                   <li onClick={() => scrollToSection(galleryRef)}>Gallery</li>
+                  <li onClick={() => scrollToSection(shopRef)}>Shop</li>
                   <li onClick={() => scrollToSection(contactRef)}>Contact</li>
                   <li onClick={() => scrollToSection(socialsRef)}>Socials</li>
                 </ul>
@@ -51,12 +53,29 @@ function App() {
                 <YouTubeList />
               </section>
 
+              <section ref={shopRef} className="shop">
+                <div>
+                  <h2>Loved it and want to buy <i className="fas fa-shopping-cart"></i></h2>
+                  <div className="embed-container">
+                    <iframe
+                      src="https://illpeoplemusic.com/@ambymusic"
+                      title="Amby Music - IllPeopleMusic"
+                      width="100%"
+                      height="600"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              </section>
+
               <section ref={contactRef} className="contact">
                 <ContactForm />
               </section>
 
               <footer ref={socialsRef} className="footer">
-                <h3>🌍 Follow Me</h3>
+                <h3><i className="fas fa-globe"></i> Follow Me</h3>
                 <div className="footer-links">
                   <a href="https://www.instagram.com/gursimran.2424/" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-instagram"></i> Instagram

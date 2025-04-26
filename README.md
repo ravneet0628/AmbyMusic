@@ -1,4 +1,4 @@
-# 🎵 Amby Music
+# 🎧 Amby Music
 [🔗 Visit Live Website](https://ambymusic-ni9u.onrender.com)
 
 **Amby Music** is a modern, responsive web app to showcase music videos, receive contact form submissions, and manage them via a secure admin dashboard.

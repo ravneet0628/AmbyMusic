@@ -32,7 +32,7 @@ function YouTubeList() {
   return (
     <div>
       <h2 style={{ textAlign: "center", color: "#ffd700", marginBottom: "20px" }}>
-        My Music Portfolio
+        My Music Portfolio <i className="fas fa-music"></i>
       </h2>
 
       <div className="youtube-list">

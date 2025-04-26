@@ -108,7 +108,10 @@ section {
   gap: 20px;
   flex-wrap: wrap;
 }
-
+/* Shop section */
+.shop h2 {
+  text-align: center;
+}
 /* Contact Section */
 .contact {
   text-align: center;

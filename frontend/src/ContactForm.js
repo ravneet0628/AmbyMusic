@@ -33,7 +33,7 @@ function ContactForm() {
   return (
     
     <form onSubmit={handleSubmit}>
-      <h2>Contact Us</h2>
+      <h2>Contact Us <i className="fas fa-envelope"></i></h2>
       <input
         type="text"
         name="name"
