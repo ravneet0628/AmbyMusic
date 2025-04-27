@@ -203,28 +203,30 @@ function AdminPage() {
           <p>No responses received yet.</p>
         ) : (
           <>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Message</th>
-                  <th>Received At</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {paginatedResponses.map((response) => (
-                  <tr key={response.id}>
-                    <td>{response.name}</td>
-                    <td>{response.email}</td>
-                    <td>{response.message}</td>
-                    <td>{new Date(response.created_at).toLocaleString()}</td>
-                    <td><button onClick={() => deleteContact(response.id)}>Delete</button></td>
+          <div className="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Received At</th>
+                    <th>Action</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {paginatedResponses.map((response) => (
+                    <tr key={response.id}>
+                      <td>{response.name}</td>
+                      <td>{response.email}</td>
+                      <td>{response.message}</td>
+                      <td>{new Date(response.created_at).toLocaleString()}</td>
+                      <td><button onClick={() => deleteContact(response.id)}>Delete</button></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
             <div className="pagination">
               <button onClick={() => setResponsePage((p) => Math.max(p - 1, 1))} disabled={responsePage === 1}>Previous</button>
               <span>Page {responsePage}</span>

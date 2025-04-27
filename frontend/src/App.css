@@ -338,11 +338,30 @@ button:hover:not(:disabled) {
   font-size: 1rem;
 }
 
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 table {
   width: 100%;
-  border-collapse: collapse;
   margin-top: 20px;
   background-color: white;
+  border-collapse: collapse;
+  
 }
 
 table thead {
